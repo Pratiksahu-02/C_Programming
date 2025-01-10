@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include"file_1.c"
-void fun()
+extern int x;
+int fun()
 {
-    printf("inf2=%d",x);
+    int c=2;
+    printf("inf2=%d",c);
+    printf("inf3=%d",x);
 }
