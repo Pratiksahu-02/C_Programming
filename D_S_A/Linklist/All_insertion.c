@@ -44,7 +44,26 @@ void InsertAtBeginning(int value){
     }
 }
 
-
+void InsertAtPosition(int position,int value){
+    struct Node* newnode=(struct Node*)malloc(sizeof (struct Node));
+    struct Node* temp=head;
+    struct Node* prev=NULL;
+    newnode->data=value;
+    newnode->next=NULL;
+    int i=1;
+    if(position==1){
+        InsertAtBeginning(value);
+        return;
+    }
+    while (i<position){
+        prev=temp;
+        temp=temp->next;
+        i++;
+    }
+    prev->next=newnode;
+    newnode->next=temp;
+    
+}
 
 void display(){
     struct Node* temp = head;
@@ -66,6 +85,8 @@ int main(){
     InsertAtEnd(20);
     InsertAtEnd(30);
     InsertAtBeginning(50);
+    InsertAtPosition(2, 40);
+    InsertAtPosition(1, 60);
 
     display();
 
