@@ -53,7 +53,7 @@ void InsertAtPosition(int position,int value){
     int i=1;
     if(position==1){
         InsertAtBeginning(value);
-        return;
+        return; 
     }
     while (i<position){
         prev=temp;
